@@ -6,7 +6,6 @@ package redis
 
 import (
 	"math/rand"
-	"os"
 	"reflect"
 	"testing"
 	"time"
@@ -17,7 +16,7 @@ import (
 )
 
 func createTestConn() tracker.Conn {
-	testConfig, err := config.Open(os.Getenv("TESTCONFIGPATH"))
+	testConfig, err := config.Open("./testConfig.json")
 	panicOnErr(err)
 	conf := &testConfig.Tracker
 

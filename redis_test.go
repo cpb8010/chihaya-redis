@@ -8,7 +8,6 @@ import (
 	"crypto/rand"
 	"fmt"
 	"io"
-	"os"
 	"strconv"
 	"testing"
 
@@ -84,8 +83,8 @@ func panicOnErr(err error) {
 }
 
 func createTestRedisConn() *Conn {
-	testConfig, err := config.Open(os.Getenv("TESTCONFIGPATH"))
-	conf := &testConfig.Cache
+	testConfig, err := config.Open("./testConfig.json")
+	conf := &testConfig.Tracker
 	panicOnErr(err)
 
 	testPool := &Pool{

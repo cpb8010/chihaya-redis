@@ -1,0 +1,15 @@
+{
+  "tracker": {
+    "driver": "redis",
+    "network": "tcp",
+    "host": "127.0.0.1",
+    "port": "6379",
+    "user": "root",
+    "pass": "",
+    "prefix": "test:",
+
+    "max_idle_conns": 3,
+    "idle_timeout": "240s"
+  }
+}
+

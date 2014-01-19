@@ -98,6 +98,9 @@ func (p *Pool) Get() (tracker.Conn, error) {
 	return newConn, nil
 }
 
+// Conn implements the tracker.Conn interface for redis-driver
+// The conf pointer is used to setup the connection to the redis server
+// and prepend the specified prefix to keys accessed.
 type Conn struct {
 	conf *config.DataStore
 	done bool
